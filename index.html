@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    height: 100vh;
+    background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+}
+
+/* Fondo animado */
+.fondo::before,
+.fondo::after {
+    content: "❤️ ✨ 💖 ⭐ 💫";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    animation: flotar 20s linear infinite;
+    opacity: 0.4;
+}
+
+.fondo::after {
+    animation-duration: 30s;
+}
+
+@keyframes flotar {
+    from { transform: translateY(100%); }
+    to { transform: translateY(-100%); }
+}
+
+/* Contenedor */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Tarjeta */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    color: #c2185b;
+    font-size: 22px;
+}
+
+.texto {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+button {
+    background: #c2185b;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background: #9e144a;
+}
+
+#mensaje {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+#pregunta {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #e60073;
+    font-weight: bold;
+}
+
+/* Opciones */
+.opciones {
+    display: none;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.si {
+    background: #e60073;
+}
+
+.no {
+    background: #aaa;
+}
+
+/* Final */
+#final {
+    margin-top: 20px;
+    font-size: 17px;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+/* Música */
+.music {
+    margin-top: 20px;
+}
+
+.music iframe {
+    width: 100%;
+    height: 80px;
+    border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    h1 { font-size: 20px; }
+    .texto { font-size: 15px; }
+}
